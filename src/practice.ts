@@ -131,3 +131,12 @@ import * as mylib from './mylib';
     console.log(mylib.sub(a, b));
     console.log(mylib.mul(a, b));
 }
+
+// 보다가 테스트 .. 느낌표를 통해 할당하는게 
+// GL함수에는 (..|null)과 관련된 반환타입이 많다.
+function getName(): string | null {
+    return null;
+};
+// 함수 뒤에 !를 붙여서 컴파일러에게 null이 아님을 알리거나, string으로 타입단언을 해준다.
+let name2: string = getName()!; // non-null 단언
+let name3: string = getName() as string; // type 단언
